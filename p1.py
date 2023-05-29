@@ -1,3 +1,40 @@
+#Email Validation.
+
+email= input("Enter Your Email : ") #g@g.com , kheniheni4767@gmail.com
+k,j,d=0,0,0
+if len(email)>=6: #error 1
+    if email[0].isalpha(): #error 2
+        if ("@" in email) and (email.count("@")==1): #error 3
+            if (email[-4]==".") ^ (email[-3]=="."): #error 4
+                for i in email: 
+                    if i==i.isspace(): #error 5.0
+                        k=1
+                    elif i.isalpha(): #error 5.1
+                        if i==i.upper():
+                            j=1
+                    elif i.isdigit(): #error 5.2
+                        continue
+                    elif i=="_" or i=="." or i=="@": #errpr 5.3
+                        continue
+                    else:
+                        d=1
+
+                if k==1 or j==1 or d==1:
+                    print("Space can not be allowed or first character must be lower check also _ . @ in the email (Error no: 5)")
+                else:
+                    print("Your Email Is Correct Formation")
+            else:
+                print("Your have to focus on . opertor (Error no: 4)")
+        else:
+            print("Your @ is more than 1 (Error no: 3)")
+    else:
+        print("Your First Letter Is Must Be In charcter (Error no: 2) ")
+else:
+    print(" Wrong Email :- Your email length is too short (Error no: 1) ")
+
+
+
+
 # Quiz game
 '''
 print("welcome to the Henil's Quiz games!!")
